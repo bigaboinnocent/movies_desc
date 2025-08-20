@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(0, 0, 0);
+  border-radius: 100px;
+  border: solid rgb(2, 61, 2) 20px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+/* ----------------------------------------------------------------------------------------------- */
+
+header {
+  height: 60px;
+  width: 100%;
+  padding: 5px 20px;
+  background-color: rgb(17 16 43);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+header a {
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+
+}
+
+header a:hover{
+  color: rgb(92, 40, 2);
+
+}
+header form input {
+  border: unset;
+  height: 30px;
+  width: 220px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  background-color: rgb(56, 56, 66);
+  color: white;
+}
+header form input:active,
+header form input:hover,
+header form input:focus,
+header form input:visited {
+  outline: unset;
+  border: unset;
+}
+header form input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+.author{
+    color: beige;
+    padding-left: 100px;
+}
+
+.author p{
+    color: antiquewhite;
+}
+
+.author {
+
+}
+        #image-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            overflow: hidden;
+            width: 400px;
+        }
+        .image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 3s step-start;
+        }
+        .image.active {
+            opacity: 1;
+        }
+        .desc span{
+            color: aliceblue;
+            padding: 20px;
+        }
+    </style>
+    <title>Inocify movie desc</title>
+</head>
+<body>
+        <header>
+        <a href="index.html">Movie desc</a>
+        <div class="credits"><a href="credits.html">credits</a></div>
+    </header>
+    <div class="description">
+        <h1>description</h1>
+        <div class="desc">
+            <span>Movie desc was developed by Bigabo innocent and bigabo innocent 
+            as an idea developed by Muso Gloire Alve. The development of this idea required many
+            compromises to  be turned into reality but special thanks to whole of the team that worked oon it.</span>
+            <div class="spacing">
+
+                <p>                                                                                                                                                                                                     </p>
+            </div>
+
+           <span> This website is intended to help users get description of the movies of their choice to 
+            ease for them the burden of pondering on which movie-to-watch phenomenon. It includes movie banners, ratings and descriptions.
+            We hope the next version to be having the space for user reviews so that you can get to know what others think about it 
+            and moost liked movies will be shown by user likes. We are also looking forward on making it's mobile app.</span>
+                        <div class="spacing">
+
+                <p>                                                                                                                                                                                                     </p>
+            </div>
+           <span>The movies found on this site are retrieved from the movie database, so copyright law is applicable to anyone  who may duplicate this website
+            <blockquote>"Bigabo innocent"</blockquote>
+            </span>
+                <div id="image-container">
+        <img src="./icon.png" class="image active" alt="Image 1">
+        <img src="./app.png" class="image" alt="Image 2">
+        <img src="./login.png" class="image" alt="Image 3">
+    </div>
+        </div>
+    </div>
+    <div class="authors">
+        <h1>THE AUTHOR</h1>
+        <p class="author">BIGABO Innocent</p>
+        <h1>THE TEAM</h1>
+        <P class="boneg">Intwari Bonheur</P>
+        <p class="alv">Muso Gloire Alve</p>
+        <p class="josh">Mugisha Ganza Joshua</p>
+    </div>
+    <script>
+         let currentImageIndex = 0;
+        const images = document.querySelectorAll('.image');
+        let likeCount = 0;
+
+        function showNextImage() {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
+
+    
+</body>
+</html>
